@@ -17,17 +17,17 @@ public class Control : MonoBehaviour
         if (Input.GetMouseButton(0) || Input.GetMouseButton(1))
         {
             go.SetActive(true);
-            if(transform.position.y < 5) rb.AddForce(Vector2.up * speedUp);
+            if(transform.position.y < 4) rb.AddForce(Vector2.up * speedUp);
         }
         else go.SetActive(false);
         //Player Control
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButtonDown(1))
         {
             inputing = -1f;
             rb.velocity = Vector2.left * speed;
             transform.rotation = Quaternion.Euler(0, 0, -inputing * 40);
         }
-        if (Input.GetMouseButtonDown(1))
+        if (Input.GetMouseButtonDown(0))
         {
             inputing = 1f;
             rb.velocity = Vector2.right * speed;
