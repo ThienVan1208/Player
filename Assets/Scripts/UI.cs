@@ -21,6 +21,7 @@ public class UI : MonoBehaviour
     [SerializeField] GameObject DeathScreen;
     [SerializeField] GameObject Points;
     [SerializeField] GameObject PauseScreen;
+    [SerializeField] GameObject PauseButton;
     [SerializeField] PlayerUI pui;
     [SerializeField] Control ctr;
     [SerializeField] Rigidbody2D playerRB;
@@ -38,12 +39,14 @@ public class UI : MonoBehaviour
         {
             Time.timeScale = 0;
             PauseScreen.SetActive(true);
+            PauseButton.SetActive(false);
         }
 
         if(!isPause)
         {
             Time.timeScale = 1;
             PauseScreen.SetActive(false);
+            PauseButton.SetActive(true);
         }
 
         if(pui.isDead) 
