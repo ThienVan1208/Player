@@ -13,7 +13,7 @@ public class Control : MonoBehaviour
     public GameObject go;
     public float inputing = 0f;
     private bool resetCooldown = true;
-    private float flyTime = 10;
+    private float flyTime = 5;
     private float cooldown;
     // Update is called once per frame
     void Update()
@@ -33,14 +33,14 @@ public class Control : MonoBehaviour
             if (Input.GetMouseButton(1))
             {
                 inputing = -1f;
-                Vector3 dir = new Vector3(-0.5f, 2, 0);
+                Vector3 dir = new Vector3(-0.8f, 2, 0);
                 rb.velocity = dir * speed;
                 transform.rotation = Quaternion.Euler(0, 0, -inputing * 40);
             }
             if (Input.GetMouseButton(0))
             {
                 inputing = 1f;
-                Vector3 dir = new Vector3(0.5f, 2, 0);
+                Vector3 dir = new Vector3(0.8f, 2, 0);
                 rb.velocity = dir * speed;
                 transform.rotation = Quaternion.Euler(0, 0, -inputing * 30);
             }
